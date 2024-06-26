@@ -3,7 +3,7 @@ Final project
 # Gene Amplification and SNP Analysis using VCF Files
 
 ## Project Overview
-This project explores the role of double-strand breaks (DSBs) in the formation of gene amplifications and analyzes Single Nucleotide Polymorphisms (SNPs) from VCF files. The program generates an Excel file with SNP locations, and the user can choose is own DNA location and look for SNP  positions..
+This project explores the role of double-strand breaks (DSBs) in the formation of gene amplifications and analyzes Single Nucleotide Polymorphisms (SNPs) from VCF files. The program generates an Excel file with SNP locations, and the user can choose is own DNA location and look for SNP  positions as an output.
 
 ## Scientific Background
 - **Gene Amplification**: A hallmark in cancer contributing to tumorigenesis, intra-tumor heterogeneity, and drug resistance.
