@@ -41,6 +41,7 @@ python project.py input.vcf
  Run tests using pytest to ensure the program works correctly.
 
 bash
-Copy code
 pytest
 
+
+This project was originally implemented as part of the Python programming course at the Weizmann Institute of Science taught by Gabor Szabo.
