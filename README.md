@@ -41,7 +41,7 @@ python project.py input.vcf
 5. Testing
  Run tests using pytest to ensure the program works correctly.
 
-bash
+```bash
 pytest
 ```
 
