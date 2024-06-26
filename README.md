@@ -36,12 +36,13 @@ VCF File Format: A standard format for storing genetic variations. VCF files con
 To run the program with a VCF file:
 ```bash
 python project.py input.vcf
+```
 
 5. Testing
  Run tests using pytest to ensure the program works correctly.
 
 bash
 pytest
-
+```
 
 This project was originally implemented as part of the Python programming course at the Weizmann Institute of Science taught by Gabor Szabo.
