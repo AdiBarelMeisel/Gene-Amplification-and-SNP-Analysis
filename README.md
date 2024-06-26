@@ -1,9 +1,11 @@
-# Gene-Amplification-and-SNP-Analysis
-Final project
 # Gene Amplification and SNP Analysis using VCF Files
 
 ## Project Overview
-This project explores the role of double-strand breaks (DSBs) in the formation of gene amplifications and analyzes Single Nucleotide Polymorphisms (SNPs) from VCF files. The program generates an Excel file with SNP locations, and the user can choose is own DNA location and look for SNP  positions as an output.
+This project explores the role of double-strand breaks (DSBs) in the formation of gene amplifications and analyzes Single Nucleotide Polymorphisms (SNPs) from VCF files. The program parses VCF files and has four modes:
+- Parsing all SNPs in the VCF file into a CSV file
+- Parsing SNPs only from a user-chosen chromosome into a CSV file
+- Parsing SNPs only from a user-chosen chromosome and a specific nucleotide into a CSV file
+- Parsing only the most signifcant SNPs from a user-chosen chromosome into a CSV file
 
 ## Scientific Background
 - **Gene Amplification**: A hallmark in cancer contributing to tumorigenesis, intra-tumor heterogeneity, and drug resistance.
@@ -16,33 +18,26 @@ VCF File Format: A standard format for storing genetic variations. VCF files con
 
 
 ## Technical Implementation
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/AdiBarelMeisel/Gene-Amplification-and-SNP-Analysis/blob/main/README.md
-    cd Gene-Amplification-and-SNP-Analysis
 
-    ```
-2. Install dependencies:
+1. Install dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Running the Program
-   The program processes VCF files and outputs an Excel file with SNP locations.
-4. Graphical User Interface 
-  Open a window to input parameters using GUI.
-  Input Data
+2. Running the Program:
+    To run the program with a VCF file:
+    ```bash
+    python project.py path_to_vcf_file.vcf
+    ```
+    Next the program will ask which mode to run in of the four above ```all/chr/chr_ncltd/chr_signif```,
+    and for the latter three, the user will be requested to input the desired chromosme and then the desired nucleotide if required.
 
-To run the program with a VCF file:
-```bash
-python project.py input.vcf
-```
-
-5. Testing
+3. Testing
  Run tests using pytest to ensure the program works correctly.
 
 ```bash
 pytest
 ```
 
-This project was originally implemented as part of the Python programming course at the Weizmann Institute of Science taught by Gabor Szabo.
+> This project was originally implemented as part of the [Python programming course](https://github.com/szabgab/wis-python-course-2024-04)
+> at the [Weizmann Institute of Science](https://www.weizmann.ac.il/) taught by [Gabor Szabo](https://szabgab.com/)
