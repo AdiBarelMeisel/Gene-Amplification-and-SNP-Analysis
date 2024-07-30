@@ -19,25 +19,85 @@ VCF File Format: A standard format for storing genetic variations. VCF files con
 
 ## Technical Implementation
 
-1. Install dependencies:
+1. Requirements
+
+    - Python 3.x
+    - pandas
+    - pytest
+
+    To install the required packages, use the following command:
+
     ```bash
     pip install -r requirements.txt
     ```
 
 2. Running the Program:
-    To run the program with a VCF file:
+    The vcf_parser.py script provides several subcommands to parse SNPs from VCF files. The general syntax is:
+
     ```bash
-    python project.py path_to_vcf_file.vcf
+    python vcf_parser.py <command> [options]
     ```
-    Next the program will ask which mode to run in of the four above ```all/chr/chr_ncltd/chr_signif```,
-    and for the latter three, the user will be requested to input the desired chromosme and then the desired nucleotide if required.
+    Commands
+    - all: Parse all SNPs in the VCF file into a CSV file.
+
+        ```bash
+        python src/vcf_parser.py all <vcf_file> <output_csv>
+        ```
+
+        <vcf_file>: Path to the input VCF file.
+        <output_csv>: Path to the output CSV file.
+
+        Example:
+        ```bash
+        python src/vcf_parser.py all vcif_snippet.vcf output_all_snps.csv
+        ```
+    - chromosome: Parse SNPs from a specific chromosome into a CSV file.
+         ```bash
+        python src/vcf_parser.py chromosome <vcf_file> <chromosome> <output_csv>
+        ```
+        <vcf_file>: Path to the input VCF file.
+        <chromosome>: Chromosome to filter SNPs (e.g., 1, 2, ..., X, Y).
+        <output_csv>: Path to the output CSV file.
+
+        Example:
+        ```bash
+        python src/vcf_parser.py chromosome vcif_snippet.vcf 1 output_chromosome_snps.csv
+        ```
+
+    chromosome_nucleotide: Parse SNPs from a specific chromosome and nucleotide into a CSV file.
+        ```bash
+        python src/vcf_parser.py chromosome_nucleotide <vcf_file> <chromosome> <nucleotide> <output_csv>
+        ```
+        <vcf_file>: Path to the input VCF file.
+        <chromosome>: Chromosome to filter SNPs (e.g., 1, 2, ..., X, Y).
+        <nucleotide>: Nucleotide to filter SNPs (e.g., A, G, T, C).
+        <output_csv>: Path to the output CSV file.
+        
+        Example:
+
+        ```bash
+        python src/vcf_parser.py chromosome_nucleotide vcif_snippet.vcf 1 G output_chromosome_nucleotide_snps.csv
+        ```
+    significant: Parse significant SNPs (P-value < 0.05) from a specific chromosome into a CSV file.
+        ```bash
+        python src/vcf_parser.py significant <vcf_file> <chromosome> <nucleotide> <output_csv>
+        ```
+        <vcf_file>: Path to the input VCF file.
+        <chromosome>: Chromosome to filter significant SNPs (e.g., 1, 2, ..., X, Y).
+        <nucleotide>: Nucleotide to filter SNPs (e.g., A, G, T, C).
+        <output_csv>: Path to the output CSV file.
+
+        Example:
+        ```bash
+        python src/vcf_parser.py significant vcif_snippet.vcf 1 G output_significant_snps.csv
+        ```
 
 3. Testing
  Run tests using pytest to ensure the program works correctly.
 
-```bash
-pytest
-```
+    ```bash
+    pytest test_vcf_parser.py
+    ```
 
 > This project was originally implemented as part of the [Python programming course](https://github.com/szabgab/wis-python-course-2024-04)
 > at the [Weizmann Institute of Science](https://www.weizmann.ac.il/) taught by [Gabor Szabo](https://szabgab.com/)
